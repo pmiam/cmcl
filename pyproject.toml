@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "cmcl"
-version = "0.1.5"
-description = "aggregate chemical formula and measurments, compute features for machine learning"
+version = "0.2.0"
+description = "aggregate chemical formula and measurements, compute features for machine learning"
 authors = ["Panayotis Manganaris <panos.manganaris@gmail.com>"]
 
 [tool.poetry.dependencies]
