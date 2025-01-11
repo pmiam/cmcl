@@ -18,6 +18,7 @@
 - [ ] per-atom calculators
   - using pymatgen structure reducer
 - [ ] find CHAP calculator (impact on model output)
+
 * Overview
 This README also serves as a design document. Any heading marked TODO
 may as well be wishful thinking.
@@ -34,10 +35,12 @@ cmcl is built around Pandas. This ensures data is handled efficiently
 as it is processed through any variety of inquiries, transformations,
 and mapping operations enabled through the succinct and powerful
 Pandas api
+
 * TODO Data
 - [ ] VASP parser
 - [ ] sqlite rclone interface
 - [ ] cmcl database
+
 * NEXT Featurization
 :STATUSLOG:
 - State "NEXT"       from "TODO"       [2022-02-13 Sun 16:02]
@@ -57,28 +60,35 @@ processed into other feature sets using a variety of libraries
 - Matminer
 - DScribe [[cite:&himanen-2020-dscrib]]
 - MEGnet [[cite:&chen-2019-graph-networ]]
+
 ** Perovskite Property Computation
 - [ ] compute SLME for photovoltaic absorbers.
   Uses SL3ME Implementation of [[cite:&yu-2012-ident-poten]] by @Idwillia on Github
 - [ ] 
+
 * Data Handling Workflow
 ** TODO Data Aggregation
 cmcl exposes itself as a commandline tool for aggregate computational
 data from VASP and Quantum Espresso experiment directory trees
+
 * TODO Formula generation
 includes tools for randomly creating formula from a set of
 rules. Usually better to systematically plan an experiment though
+
 * Property Prediction
 cmcl includes some pretrained models which may be used to infer the
 properties of chemistries
 ** TODO Methods for applying pretrained models 
+
 * Installation
 cmcl is very early in development.
+
 ** Install by cloning the repository
 yogi can be installed into a standard python environment.  It is a
 poetry project and may be installed using pip.
 
 proceed to run your python process/jupyter kernel of choice and enjoy.
+
 * Contribution
 Yes Please.
 
@@ -93,6 +103,7 @@ $ cd /to/experiment/dir
 $ python
 >>> cmcl aggregate *
 #+end_example
+
 ** compute features 
 #+begin_src jupyter-python :session "py" :exports "both" :results "raw drawer"
   import pandas as pd
@@ -104,13 +115,16 @@ $ python
 * TODO Data Aggregation
 ** TODO pymatgen assimilation library
 For collecting VASP results
+
 ** TODO NOMAD?
 use nomad for metadata generation and more?
+
 * TODO Data Sharing
 ** TODO Local DB
 cmcl will create a local database upon a call to a dataframe's cmclwrite method.
 
 this database can then be freely populated with dataframes
+
 ** TODO "Collaboration Remote"
 cmcl also provides a "push" method that allows users to choose a remote host
 
@@ -121,14 +135,17 @@ so, "pull" is implicit. the database only ever grows. nothing is ever overwritte
 #+begin_example
 $ rclone sync purduebox:/Mannodi_group_research_material/Perovskite\ Dataset/perovskites.db
 #+end_example
+
 ** TODO "Publish Remote"
 cmcl implements OPTIMATE to provide an easy universal query and, where
 possible, publish option for sharing your data with global platforms
+
 * External Datasets 
 compare model to experimental results for validation
 1. [[cite:&almora-2020-devic-perfor]] meta-analysis of Perovskite PV devices.
 2. more literature compounds.
 3. Materials Zone aggregate database.
+
 * Citations
 bibliographystyle:authordate1
 bibliography:~/org/bibliotex/bibliotex.bib
